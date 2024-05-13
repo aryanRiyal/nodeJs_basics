@@ -1,0 +1,21 @@
+MongoDB
+
+//Install
+sudo apt update
+sudo apt install mongodb-server
+sudo apt install mongodb-clients
+sudo apt install mongo-tools
+
+
+//check, start, stop
+mongo --version
+sudo systemctl status mongodb
+sudo systemctl stop mongodb
+sudo systemctl start mongodb
+sudo systemctl restart mongodb
+
+//to run shell
+mongo
+
+//Uninstall
+sudo apt remove mongodb-server mongodb-clients mongo-tools

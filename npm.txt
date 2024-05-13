@@ -1,0 +1,11 @@
+node init
+
+// DAY_1
+nodemon
+prompt-sync
+//DAY_2
+express
+lodash
+//DAY_5
+mongoose
+dotenv
