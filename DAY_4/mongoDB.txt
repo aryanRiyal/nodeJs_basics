@@ -1,0 +1,56 @@
+# Step 1: Show existing databases.
+show databases
+
+# Step 2: Create or switch to a new database using the `use` command.
+use mydatabase
+
+# Step 3: Show collections within the selected database.
+show collections
+
+# Step 4: Create a new collection within the selected database using the `db.createCollection()` method.
+db.createCollection("mycollection")
+
+# Step 5: Insert a new document into the collection using the `insertOne()` method.
+db.mycollection.insertOne({ key: "value" })
+
+#Step 5.1: Insert many 
+db.mycollection.insertMany([
+   { name: "John", age: 30 },
+   { name: "Alice", age: 25 },
+   { name: "Bob", age: 35 }
+])
+
+# Step 6: Find and retrieve documents from the collection using the `find()` method.
+db.mycollection.find()
+
+# Step 7: Update an existing document in the collection using the `updateOne()` method.
+db.mycollection.updateOne({ key: "value" }, { $set: { newKey: "newValue" } })
+
+# Step 8: Delete a document from the collection using the `deleteOne()` method.
+db.mycollection.deleteOne({ key: "value" })
+
+# Step 9: Count the number of documents in the collection using the `count()` method.
+db.mycollection.count()
+
+# Step 10: Create an index on a field to improve query performance using the `createIndex()` method.
+db.mycollection.createIndex({ key: 1 })
+
+# Step 11: Perform aggregation operations on the collection using the `aggregate()` method.
+db.mycollection.aggregate([
+    { $group: { _id: "$key", count: { $sum: 1 } } }
+])
+
+# Step 12: Sort documents in the collection using the `sort()` method.
+db.mycollection.find().sort({ key: 1 })
+
+# Step 13: Limit the number of documents returned using the `limit()` method.
+db.mycollection.find().limit(10)
+
+
+//Deletion
+# Delete a Database
+use mydatabase
+db.dropDatabase()
+
+# Delete a Collection
+db.mycollection.drop()
