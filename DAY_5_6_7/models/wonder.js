@@ -15,7 +15,7 @@ const wonderSchema = new mongoose.Schema({
         type: String,
         required: true,
         enum: WorldWonderEnum,
-        unique:  true
+        unique: true
     },
     location: {
         type: String,

@@ -15,7 +15,8 @@ const continentSchema = new mongoose.Schema({
         type: String,
         required: true,
         enum: ContinentsEnum,
-        unique: true
+        unique: true,
+        sparse: true
     },
     size: {
         type: String,
@@ -33,7 +34,8 @@ const continentSchema = new mongoose.Schema({
     },
     wonders: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'WorldWonder'
+        ref: 'WorldWonder',
+        sparse: true
     }],
     habitable: {
         type: Boolean,
@@ -41,10 +43,12 @@ const continentSchema = new mongoose.Schema({
     },
     funFact: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     }
-});
+// }, { autoIndex: false } );
+}, { autoIndex: true } );
+
+// continentSchema.index({ wonders: 1 }, { unique: true, sparse: true });
 
 const Continent = mongoose.model('Continent', continentSchema);
 module.exports = { ContinentsEnum, Continent };
