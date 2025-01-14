@@ -54,3 +54,16 @@ db.dropDatabase()
 
 # Delete a Collection
 db.mycollection.drop()
+
+
+Basic Query operators
+
+$in: Matches any of the values specified in an array.
+$set: Updates the value of a field, adding it if it does not exist.
+$and: Joins query clauses with a logical AND.
+$or: Joins query clauses with a logical OR.
+$gt: Matches values greater than a specified value.
+$lt: Matches values less than a specified value.
+$push: Adds an element to an array field.
+$pull: Removes all instances of a value from an array field.
+$inc: Increments the value of a field by a specified amount.

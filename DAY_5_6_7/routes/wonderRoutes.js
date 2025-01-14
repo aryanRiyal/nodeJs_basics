@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+//C-Create
 router.post('/new', async (req, res) => {
     const data = req.body;
     if(WorldWonderEnum.includes(data.name) && ContinentsEnum.includes(data.continent)) {
@@ -45,6 +46,7 @@ router.post('/new', async (req, res) => {
     }
 });
 
+//R-Read
 router.get('/:name', async (req, res) => {
     const wonderName = req.params.name;
     if(WorldWonderEnum.includes(wonderName)) {
@@ -65,6 +67,7 @@ router.get('/:name', async (req, res) => {
     }
 });
 
+//U-Update
 router.put('/:name', getWonderIdByName, async (req, res) => {
     try{
         const wonderID = req.wonderID;
@@ -84,6 +87,7 @@ router.put('/:name', getWonderIdByName, async (req, res) => {
     }
 });
 
+//D-Delete
 router.delete('/:name',  getWonderIdByName, async (req, res) => {
     try{
         const wonderID = req.wonderID;
